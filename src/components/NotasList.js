@@ -38,7 +38,7 @@ export default class NotasList extends React.Component {
                     tempNoArticlesCero.sort((a,b)=> a.stats.visits + b.stats.visits)
                     this.setState({notasAll: tempNoArticlesCero})
                     let princ = tempNoArticlesCero.slice(0,5)
-                    this.setState({principales: princ})
+                    this.setState({principales: princ, loading:false})
                   }).catch(err => {
                     console.log("Error Reading data " + err);
                   });
@@ -88,12 +88,14 @@ export default class NotasList extends React.Component {
                 <h4 className="titulo-1 MS-font">lo más leído</h4>
 
                 <div>
-                {this.state.principales.map((nota,index) => (
-                    <div className="nota-item" key={index}>
-                        <div className="col-2"><h2 className="PT-font Nota-Num">{index+1}</h2></div>
-                        <div className="col-8 enlace" onClick={() =>this.goto(nota.path)}><h4 className="MS-font">{JSON.stringify(nota.title)}</h4></div>
-                    </div>
-                ))}
+                {this.state.loading ? <h5>Cargando notas...</h5> : 
+                    this.state.principales.map((nota,index) => (
+                        <div className="nota-item" key={index}>
+                            <div className="col-2"><h2 className="PT-font Nota-Num">{index+1}</h2></div>
+                            <div className="col-8 enlace" onClick={() =>this.goto(nota.path)}><h4 className="MS-font">{JSON.stringify(nota.title)}</h4></div>
+                        </div>
+                    ))
+                }
                 </div> 
             </div>
         )
