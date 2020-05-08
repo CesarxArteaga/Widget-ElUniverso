@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&display=swap');
+
+.col-2{
+ width: 15%;
+}
+.col-8{
+    width: 85%;
+}
+.container{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 15px 25px;
+}
+
+.titulo-1{
+    color: #084F8D;
+    border-bottom: 1px solid #a6cae3;
+    text-transform: uppercase;
+}
+
+.Nota-Num{
+    font-size: 48pt;
+    font-weight: lighter;
+    color: rgb(210, 218, 226);
+}
+
+.MS-font{
+    font-family: 'Montserrat', sans-serif;
+}
+.PT-font{
+    font-family: 'PT Serif', serif;
+}
+
+.nota-item{
+    display: flex;
+    border-bottom: 1px solid #a6cae3;
+    border-radius: 5px;
+}
+.nota-item:hover{
+    transition: 0.3s;
+    background-color: #eff1f3;
+}
+
+.nota-item *{
+    margin: 0;
+    
+}
+
+.nota-item h2{
+    text-align: center;
+}
+
+.enlace{
+    cursor: pointer;
+    padding-top: 14px;
+}
+
+.nota-item:hover{
+    transform: scaleY(1.05);
+    transform: scaleX(1.05);
+}
+
